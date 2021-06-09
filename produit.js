@@ -52,12 +52,14 @@ et accessoirement créer le HTML*/
             //prix nom description 
 //fonction 2
     // bouton de personnalisation 
-        //
-        //
+        // recuperer les infos du tableau lenses
+        // creer les options de la balise select et les afficher
 // fonction 3 
     // ajout au panier 
-        // 
-        //
+        // créer le bouton en HTML 
+        // allez le chercher via son id 
+        // evenement onClick qui envoie prix, nom, l'id, la quantité  du produit via l'url de la future page panier. 
+            //A creuser 
 
 
 
