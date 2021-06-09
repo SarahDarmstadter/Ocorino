@@ -33,11 +33,13 @@ nav img {
   border: none;
 }
 
-.card_produit {
+.cards_produit {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  width: 100%;
+  border: solid 2px black;
 }
 
 .card-body {
@@ -57,9 +59,9 @@ footer a {
   padding-left: 20px;
 }
 
-.cardJS {
-  width: 200px;
-  background: yellow;
+.img_produit {
+  width: 50px;
+  height: 50px;
 }
 
 /*# sourceMappingURL=accueil.css.map */
