@@ -80,16 +80,21 @@ function createCard(data) {
     let lien = document.createElement("a");
         lien.classList.add("lien");
         lien.href = "produit.html?id=" + data._id;
-
-    let id = document.createElement("p");
-        id.classList.add("id");
-        id.textContent = data._id;
-        newCard[newCard.length - 1].appendChild(id);
+    
+    let img = document.createElement("img");
+        img.classList.add("img_produit");
+        img.src = data.imageUrl ; 
+        newCard[newCard.length - 1].appendChild(img)
 
     let name = document.createElement("p");
         name.classList.add("name");
         name.textContent = data.name;
         newCard[newCard.length - 1].appendChild(name);
+
+    let id = document.createElement("p");
+        id.classList.add("id");
+        id.textContent = data._id;
+        newCard[newCard.length - 1].appendChild(id);
     
     let description = document.createElement("p");
         description.classList.add("description");
@@ -98,13 +103,12 @@ function createCard(data) {
     
     let price = document.createElement("p");
         price.classList.add("price");
-        price.textContent += data.price + " euros"; 
+    let prix = data.price;
+    let prixEspace = prix.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+        price.textContent = prixEspace + " euros"; 
         newCard[newCard.length - 1].appendChild(price)
     
-    let img = document.createElement("img");
-        img.classList.add("img_produit");
-        img.src = data.imageUrl ; 
-        newCard[newCard.length - 1].appendChild(img)
+    
     
     lien.appendChild(newCard[newCard.length - 1])
     cardsProduit.appendChild(lien)

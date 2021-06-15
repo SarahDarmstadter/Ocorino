@@ -3,58 +3,118 @@ $color-violet: #8f5bfe;
 $color-noir:#261624;
 $color-orange: #e38910;
 
+@font-face 
+  { 
+      font-family: 'Raleway-VariableFont_wghts';
+      src: url("/police/Raleway-Thin.ttf") format('truetype');
+  }
 
-.container-fluid
-{
-    padding:0;
-}
-
-nav 
-{
-    background-color: $color-rose;
+*, *:after, *:before
+ {
+    box-sizing: border-box;
     margin:0;
-        & a 
-            {
-                color: $color-noir;
-            }
-        & img 
-            {
-            width: 20%;  
-            }
+    
+  }
+
+body
+{
+    font-family: 'Raleway-Thin';
 }
 
-.navbar
+header
 {
-    padding-left: 30px;
-}
-
-.jumbotron
-{
-    background-color: $color-violet;
     display: flex;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 0px;
-        & h1
-            {
-                font-size: 1.5em;
-                color: white;
-            }
+    justify-content: space-between;
+    background-color: $color-rose;
 }
 
-.card
+.navigation
 {
-    border: none;
+    align-items: center;
+    display: flex;
+    padding-right: 5%;
+}
+
+.logo
+{
+    width: 25%;
+    margin-left: 50px;
+}
+
+ul 
+{
+    list-style: none;
+    display: flex;
+}
+
+.nav-link
+{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    margin-right: 30px;
+    font-family: 'Raleway-Thin';
+
+}
+
+.nav-item
+{
+    cursor: pointer;  
+    margin-right: 30%;  
 }
 
 .cards_produit
 {
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 50px;
+}
+
+.lien 
+{
+    text-decoration: none;
+    color: black;
+    justify-content: center;
+    display: flex;
+}
+
+.newCard
+{
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-right: 0px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    line-height: 1em;
+    cursor: pointer;
+    box-shadow: 0px 0px 3px 2px #cfc7c7;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.img_produit 
+{
     width: 100%;
-    border: solid 2px black;
+}
+
+.name
+{
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 15px 15px 15px 0px;
+}
+
+.description
+{
+    padding: 10px 10px 10px 0px;
+}
+
+.price
+{
+    align-self: flex-end;
 }
 
 .card-body
@@ -79,7 +139,5 @@ footer
     }
 }
 
-.img_produit {
-    width: 50px;
-    height: 50px;
-}
+
+    

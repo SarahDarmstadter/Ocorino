@@ -110,4 +110,31 @@ footer a {
   padding-left: 20px;
 }
 
-/*# sourceMappingURL=accueil.css.map */
+#produit {
+  display: flex;
+  box-shadow: 0px 0px 3px 2px #cfc7c7;
+  border-radius: 3px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.produit__image {
+  width: 80%;
+}
+
+.produit__img {
+  width: 100%;
+}
+
+.produit__texte {
+  padding: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.produit__option {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=produit.css.map */

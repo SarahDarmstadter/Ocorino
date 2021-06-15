@@ -36,12 +36,12 @@ function getProductInfo() {
         })
         .then(function(data) {
             fonction1(data);
-            fonction2(data);
             console.log(data)
         })
         .catch(function(error) {
-            console.error(error);
-        });      
+            console.log(error);
+        });   
+      
 }
 
 /* Créer DES fonctions qui afficheront les infos produit sur la page HTML 
@@ -58,8 +58,9 @@ et accessoirement créer le HTML*/
     // ajout au panier 
         // créer le bouton en HTML 
         // allez le chercher via son id 
-        // evenement onClick qui envoie prix, nom, l'id, la quantité  du produit via l'url de la future page panier. 
-            //A creuser 
+        // evenement onClick qui genere a chaque clic un tableau [ Nom du produit, prix, option, id ?];
+            // stocker ce tableau dans local storage. 
+
 
 
 
@@ -68,29 +69,59 @@ et accessoirement créer le HTML*/
 
 
 function fonction1(produit) {
+
+    let select = document.getElementById("produit__personnalisation");
     let imageBox = document.getElementById("produit__image");
     let imgProduit = document.createElement("img");
+        imgProduit.classList.add("produit__img");
         imgProduit.src = produit.imageUrl;
     imageBox.appendChild(imgProduit);
 
-// A TERMINER 
-}
+    let texteBox = document.getElementById("produit__texte");
+    let prixProduit = document.createElement("p");
+        prixProduit.classList.add("produit__prix");
+    let prix = produit.price;
+    let prixEspace = prix.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 
-function fonction2(produit) {
+        prixProduit.textContent = prixEspace + " euros";
+    texteBox.appendChild(prixProduit);
+    
+    let descriptionProduit = document.createElement("p");
+        descriptionProduit.classList.add("produit__description");
+        descriptionProduit.textContent = produit.description;
+    texteBox.appendChild(descriptionProduit);
+
+    let idProduit = document.createElement("p");
+        idProduit.classList.add("produit__id");
+        idProduit.textContent = produit._id;
+    texteBox.appendChild(idProduit);
+
+    let nomProduit = document.createElement("p");
+        nomProduit.classList.add("produit__nom");
+        nomProduit.textContent = produit.name;
+    texteBox.appendChild(nomProduit);
+
     let dropdownList = document.getElementById("produit__personnalisation");
-    produit.lenses.forEach(function(choix) {
+    produit.lenses.forEach(function(lentille) {
         let option = document.createElement("option");
-        option.value = choix;
-        option.textContent = choix;
-        dropdownList.appendChild(option);
-    })
+        option.value = lentille;
+        option.textContent = lentille;
+    dropdownList.appendChild(option);
+    });
 
 
-
-
-
-
-}
-
+    let boutonPanier = document.getElementById("produit__panier");
+    let quantitéProduit = 1;
+        boutonPanier.addEventListener('click', function(event){
+    let infosStockées = [];
+        infosStockées.push(produit.name, produit.price, produit._id, quantitéProduit, dropdownList.selectedIndex);
+        localStorage.setItem(1, infosStockées);
+        console.log(localStorage.getItem(1));
+        });   
+        boutonPanier.onclick = function ajoutProduit() {
+            quantitéProduit++; 
+    let articlesAuPanier = document.getElementById("panier__nombre-articles");
+        articlesAuPanier.textContent = quantitéProduit-1}  
+};
 
 getProductInfo();
