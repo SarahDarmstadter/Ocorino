@@ -103,8 +103,8 @@ function createCard(data) {
     
     let price = document.createElement("p");
         price.classList.add("price");
-    let prix = data.price;
-    let prixEspace = prix.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    let prix = data.price /100;
+    let prixEspace = prix.toString().replace(/(\d)(?=(\d{3})+\b)/g,'$1 ');
         price.textContent = prixEspace + " euros"; 
         newCard[newCard.length - 1].appendChild(price)
     

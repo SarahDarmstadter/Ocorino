@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel=stylesheet href="CSS/produit.css">
+<link rel=stylesheet href="CSS/panier.css">
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -14,7 +16,6 @@
     <title> Ocarino - Sarah Darmstadter</title>
 </head>
  <body>
-    <header>
         <header>
             <img class ="logo" src="logo_ocarino.PNG" alt="Logo d'Ocorino">
             <nav class="navigation">
@@ -28,7 +29,11 @@
                 </ul>
             </nav>
         </header> 
-    </header> 
+
+        <section>
+            <div id="panier__articles" class="panier__articles"></div>
+        </section>
+    
 
 
 
@@ -37,3 +42,7 @@
         <a href="#">A propos d'Orinoco</a>
         <a href="#">Rejoignez-nous</a>
     </footer>
+    <script src="panier.js"></script>
+
+</body>
+</html>

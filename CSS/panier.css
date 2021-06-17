@@ -110,6 +110,118 @@ footer a {
   padding-left: 20px;
 }
 
+@font-face {
+  font-family: "Raleway-VariableFont_wghts";
+  src: url("/police/Raleway-Thin.ttf") format("truetype");
+}
+*, *:after, *:before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Raleway-Thin";
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f3e9f1;
+}
+
+.navigation {
+  align-items: center;
+  display: flex;
+  padding-right: 5%;
+}
+
+.logo {
+  width: 25%;
+  margin-left: 50px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+  margin-right: 30px;
+  font-family: "Raleway-Thin";
+}
+
+.nav-item {
+  cursor: pointer;
+  margin-right: 30%;
+}
+
+.cards_produit {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.lien {
+  text-decoration: none;
+  color: black;
+  justify-content: center;
+  display: flex;
+}
+
+.newCard {
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 0px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  line-height: 1em;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px 2px #cfc7c7;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.img_produit {
+  width: 100%;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 15px 15px 15px 0px;
+}
+
+.description {
+  padding: 10px 10px 10px 0px;
+}
+
+.price {
+  align-self: flex-end;
+}
+
+.card-body {
+  border: 5px solid #e38910;
+  height: 200Px;
+  margin-bottom: 30px;
+}
+
+footer {
+  background-color: #f3e9f1;
+  color: #261624;
+  padding: 30px 0px 30px 30px;
+}
+footer a {
+  color: #261624;
+  text-decoration: none;
+  padding-left: 20px;
+}
+
 #produit {
   display: flex;
   box-shadow: 0px 0px 3px 2px #cfc7c7;
@@ -154,4 +266,4 @@ footer a {
   margin-right: 30px;
 }
 
-/*# sourceMappingURL=produit.css.map */
+/*# sourceMappingURL=panier.css.map */

@@ -40,8 +40,7 @@ function getProductInfo() {
         })
         .catch(function(error) {
             console.log(error);
-        });   
-      
+        });      
 }
 
 /* Créer DES fonctions qui afficheront les infos produit sur la page HTML 
@@ -50,11 +49,9 @@ et accessoirement créer le HTML*/
     //creation div image 
     // creation info "texte"
             //prix nom description 
-//fonction 2
     // bouton de personnalisation 
         // recuperer les infos du tableau lenses
         // creer les options de la balise select et les afficher
-// fonction 3 
     // ajout au panier 
         // créer le bouton en HTML 
         // allez le chercher via son id 
@@ -118,7 +115,6 @@ function fonction1(produit) {
         nomProduit : produit.name,
         idProduit : produit._id,
         prixProduit : produit.price,
-        quantité : quantitéProduit, 
     };
 
 // Déclaration d'une variable produitdDansLocalStorage dans laquelle on placera les clés et valeurs du local storage
