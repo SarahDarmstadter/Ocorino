@@ -1,14 +1,15 @@
-@font-face {
+font-face {
   font-family: "Raleway-VariableFont_wghts";
-  src: url("/police/Raleway-Thin.ttf") format("truetype");
+  src: url("public/police/Raleway-VariableFont_wght.ttf") format("truetype");
 }
+
 *, *:after, *:before {
   box-sizing: border-box;
   margin: 0;
 }
 
 body {
-  font-family: "Raleway-Thin";
+  font-family: "Raleway-VariableFont_wghts";
 }
 
 header {
@@ -110,17 +111,18 @@ footer a {
   padding-left: 20px;
 }
 
-@font-face {
+font-face {
   font-family: "Raleway-VariableFont_wghts";
-  src: url("/police/Raleway-Thin.ttf") format("truetype");
+  src: url("public/police/Raleway-VariableFont_wght.ttf") format("truetype");
 }
+
 *, *:after, *:before {
   box-sizing: border-box;
   margin: 0;
 }
 
 body {
-  font-family: "Raleway-Thin";
+  font-family: "Raleway-VariableFont_wghts";
 }
 
 header {
@@ -264,6 +266,38 @@ footer a {
   display: flex;
   flex-direction: row-reverse;
   margin-right: 30px;
+}
+
+.panier__articles {
+  padding-left: 3%;
+  margin-top: 2%;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+.div_produit {
+  display: flex;
+  margin-bottom: 1%;
+  border: solid 1px black;
+  width: 60%;
+}
+
+.produit__img {
+  width: 20%;
+}
+
+.div_produit__texte {
+  font-size: 0.8em;
+  padding-left: 1%;
+  padding-top: 0.5%;
+}
+
+.article_nom {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 2px;
 }
 
 /*# sourceMappingURL=panier.css.map */

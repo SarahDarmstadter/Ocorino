@@ -77,10 +77,9 @@ function fonction1(produit) {
     let texteBox = document.getElementById("produit__texte");
     let prixProduit = document.createElement("p");
         prixProduit.classList.add("produit__prix");
-    let prix = produit.price;
-    let prixEspace = prix.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    let prix = produit.price /100;
 
-        prixProduit.textContent = prixEspace + " euros";
+        prixProduit.textContent = prix + " euros";
     texteBox.appendChild(prixProduit);
     
     let descriptionProduit = document.createElement("p");
@@ -115,6 +114,8 @@ function fonction1(produit) {
         nomProduit : produit.name,
         idProduit : produit._id,
         prixProduit : produit.price,
+        imageProduit : produit.imageUrl,
+        descriptionProduit : produit.description
     };
 
 // Déclaration d'une variable produitdDansLocalStorage dans laquelle on placera les clés et valeurs du local storage
@@ -134,15 +135,17 @@ function fonction1(produit) {
 
     }
 
-
+}); 
     // localStorage.setItem(1, JSON.stringify(infoProduit))
 //console.log(localStorage.getItem(1));
-        }); 
+        
         
         boutonPanier.onclick = function ajoutProduit() {
             quantitéProduit++; 
     let articlesAuPanier = document.getElementById("panier__nombre-articles");
-        articlesAuPanier.textContent = quantitéProduit-1}; 
+        articlesAuPanier.textContent = quantitéProduit-1
+    }; 
+    
  };  
 
     

@@ -3,11 +3,12 @@ $color-violet: #8f5bfe;
 $color-noir:#261624;
 $color-orange: #e38910;
 
-@font-face 
+font-face 
   { 
       font-family: 'Raleway-VariableFont_wghts';
-      src: url("/police/Raleway-Thin.ttf") format('truetype');
+      src: url('public/police/Raleway-VariableFont_wght.ttf') format('truetype');
   }
+
 
 *, *:after, *:before
  {
@@ -18,7 +19,7 @@ $color-orange: #e38910;
 
 body
 {
-    font-family: 'Raleway-Thin';
+    font-family: 'Raleway-VariableFont_wghts';
 }
 
 header

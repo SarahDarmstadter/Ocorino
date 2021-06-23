@@ -1,6 +1,42 @@
 @import 'accueil.scss';
 @import "produit.scss";
 
-body{
+
+
+.panier__articles
+{
+    padding-left: 3%;
+    margin-top: 2%;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+.div_produit
+{
+    display: flex;
+    margin-bottom: 1%;
+    border: solid 1px black;
+    width: 60%;
+}
+
+.produit__img
+{
+    width: 20%;
+}
+
+.div_produit__texte
+{
+    font-size: 0.8em;
+    padding-left: 1%;
+    padding-top: 0.5%;
     
+}
+
+.article_nom
+{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 2px;
 }
