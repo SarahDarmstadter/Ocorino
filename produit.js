@@ -108,7 +108,9 @@ function fonction1(produit) {
 
     let boutonPanier = document.getElementById("produit__panier");
     let quantitéProduit = 1;
-// Partie EVENT LISTENER -------------------------------------------------------------
+
+    
+// ------------------------------------Partie EVENT LISTENER -------------------------------------------------------------
     boutonPanier.addEventListener('click', function(event){
     let infoProduit = {
         nomProduit : produit.name,
@@ -132,21 +134,20 @@ function fonction1(produit) {
         produitDansLocalStorage.push(infoProduit);
         localStorage.setItem("achats", JSON.stringify(produitDansLocalStorage))
         console.log(produitDansLocalStorage);
-
     }
 
+    let chiffrePanier = document.getElementById("panier__nombre-articles");
+    chiffrePanier.textContent = produitDansLocalStorage.length;
+
 }); 
-    // localStorage.setItem(1, JSON.stringify(infoProduit))
-//console.log(localStorage.getItem(1));
-        
-        
-        boutonPanier.onclick = function ajoutProduit() {
-            quantitéProduit++; 
-    let articlesAuPanier = document.getElementById("panier__nombre-articles");
-        articlesAuPanier.textContent = quantitéProduit-1
-    }; 
-    
+    // -------------------- fin event listener ----------------------------
  };  
+
+    let chiffrePanier = document.getElementById("panier__nombre-articles");
+    let produitDansLocalStorage = JSON.parse(localStorage.getItem("achats"));
+    chiffrePanier.textContent = produitDansLocalStorage.length;
+  
+    
 
     
 getProductInfo();

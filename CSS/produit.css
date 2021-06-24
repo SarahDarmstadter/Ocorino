@@ -1,8 +1,7 @@
-font-face {
+@font-face {
   font-family: "Raleway-VariableFont_wghts";
-  src: url("public/police/Raleway-VariableFont_wght.ttf") format("truetype");
+  src: url("../public/police/Raleway-VariableFont_wght.ttf") format("truetype");
 }
-
 *, *:after, *:before {
   box-sizing: border-box;
   margin: 0;

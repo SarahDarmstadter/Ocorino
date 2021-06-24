@@ -108,14 +108,17 @@ function createCard(data) {
         price.textContent = prixEspace + " euros"; 
         newCard[newCard.length - 1].appendChild(price)
     
-    
-    
     lien.appendChild(newCard[newCard.length - 1])
     cardsProduit.appendChild(lien)
 }
 
+let chiffrePanier = document.getElementById("panier__nombre-articles");
+let produitDansLocalStorage = JSON.parse(localStorage.getItem("achats"));
 
-//ajouter le lien comme price et copagnie avec data._id en 
+chiffrePanier.textContent = produitDansLocalStorage.length;
+    
+
+
 
    
     

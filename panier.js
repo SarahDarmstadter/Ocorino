@@ -11,10 +11,10 @@
 // Recupération des données du local Storage. 
 
 let articlesAuPanier = JSON.parse(localStorage.getItem("achats"));
-console.log(articlesAuPanier);
+//console.log(articlesAuPanier);
 
 let listeArticles = document.getElementById("panier__articles");
-console.log(listeArticles)
+//console.log(listeArticles)
 
 // ---------- creation d'une fonction pour récuperer chaque données de chaque tableau 
 
@@ -28,6 +28,7 @@ function getDataStored (localStorage) {
 
     let divArticle = document.createElement("div");
         divArticle.classList.add("div_produit");
+        divArticle.id = "div_produit"
         divArticle.appendChild(imgProduit);
     listeArticles.appendChild(divArticle);
         
@@ -51,11 +52,12 @@ function getDataStored (localStorage) {
         divTexte.appendChild(articlePrice);
         
     let retirerDuPanier = document.createElement("button");
-        retirerDuPanier.id = "supprimer";
+        retirerDuPanier.id = "supprimer"+i;
         retirerDuPanier.classList.add("supprimer");
         retirerDuPanier.innerText = "Supprimer";
         divTexte.appendChild(retirerDuPanier);
-
+        
+    supprimerArticle(i);
 //-------- fermeture boucle for ---------
 }
 //------- fermeture GetDataStored
@@ -65,39 +67,41 @@ function getDataStored (localStorage) {
 
 function panierVide() {
     let lePanierVide = document.getElementById("panier-vide");
+    let formulaireCommande = document.getElementById("formulaire");
+    if (articlesAuPanier === null) {
+        formulaireCommande.style.display ="none";
+    }
         if (articlesAuPanier.length > 0){
             lePanierVide.style.display = "none";
-        }
+        }   
     }
 panierVide()
-
-// ---------------- creation d'une fonction pour afficher le formulaire de commande -------
- 
-
-
- // ---- fonction formulaire ------------------------------------
-
-
 
 
 //------------creation d'une fonction pour retirer un article du panier -----------------------------------
 
-function supprimerArticle(localStorage){
+function supprimerArticle(i){
+    console.log(i);
 
-    let retirerDuPanier = document.getElementById("supprimer");
-        retirerDuPanier.addEventListener("click", function(event){
-        for (let i=0; i< articlesAuPanier.length; i++) {
-            let nouveauPanier = articlesAuPanier.indexOf(i);
-                if (i > -1) {
-  articlesAuPanier.splice(i, 1);
-}
-    console.log(articlesAuPanier);
-    }
+    let retirerDuPanier = document.getElementById("supprimer"+i);
+    let storage = articlesAuPanier;
+    let articleSupprimé = document.getElementById("div_produit");
 
-// ----------- fermeture event listener
-});
+    retirerDuPanier.addEventListener("click", function(event){
+        event.preventDefault();
+        //console.log(i, articlesAuPanier[i]);
+        storage.splice(i, 1)
+        console.log(storage)
+        localStorage.setItem('achats', JSON.stringify(storage))
+       articleSupprimé.style.display = "none";
+
+        
+    // ----------- fermeture event listener --------------------------
+    });
+};
+
+
 //----------------- fermeture de la fonction supprimer l'article
-}
 
 // ------------------ Calcul du montant total à afficher --------------------
 
@@ -121,66 +125,14 @@ function prixTotal(localStorage) {
 //----- fin de la fonction Prix total
 
 getDataStored();
-supprimerArticle();
 prixTotal();
 
-//-------------------insertion formlaire HTML en JS comme ca il ne s'affiche pas si le panier est vide ----------------------
-function insertionFormulaire() {
-    let placeDuFormulaire = document.getElementById("panier__articles");
 
-    let formulaire = `
-    <form method="POST" class="formulaire" id="formulaire">
-                <fieldset>
-                    <legend>Contact</legend>
-                        <label for="lastname"> Nom</label>
-                            <input type="text" id="lastname" name="lastname" required="Veuillez remplir le champs">
-                        <label for="firstname"> Prénom </label>
-                            <input type="text" id="firstname" name="firstname" required="Veuillez remplir le champs">
-                        <label for="email"> Adresse mail</label>
-                            <input type="email" id="email" class="email" required="Veuillez renseigner votre email">
-                        <label for="telephone">Téléphone</label>
-                            <input type="tel" id="telephone" class="telephone" required="Entrez un numéro de telephone">
-                
-                <fieldset>
-                    <legend>Adresse de livraison</legend>
-                        <label for="adress">Adresse de livraison</label>
-                            <input type="text" class="adress" id="adress" required="Veuillez remplir ce champs">
-                        <label for="city">Code postale</label>
-                            <input type="text" class="city" id="city" required="Veuillez remplir ce champs">
-                        <label for="pays">Pays</label>
-                            <input type="text" class="pays" id="pays" required="Veuillez remplir ce champs">
-                </fieldset>
-                <fieldset>
-                    <legend>Moyen de paiement</legend>
-                        <input id="visa" name="type_de_carte" type="radio">
-                        <label for="visa">VISA</label>
 
-                        <input id="amex" name="type_de_carte" type="radio">
-                        <label for="amex">AmEx</label>
 
-                        <input id="mastercard" name="type_de_carte" type="radio">
-                        <label for="mastercard">Mastercard</label>
+//---------------------- EVENT LISTENER ENVOIE DU FORMULAIRE  -------------------------
 
-                        <label for="numero_de_carte">Numero de carte</label>
-                            <input id="numero_de_carte" name="numero_de_carte" type="number" required="Champs obligatoire">
-                        <label for="securite">Code sécurité</label>
-                            <input id="securite" name="securite" type="number" required="Champs obligatoire">
-                        <label for=name>Nom figurant sur la carte</label>
-                            <input id="nom-porteur" name=nom-porteur type="text" required="Champs obligatoire">      
-                      </fieldset>
-
-                      <button type="submit" id="commander" class="commander">Commander</button>
-                </form> `
-
-                placeDuFormulaire.insertAdjacentHTML("afterend", formulaire);
-}
-
-insertionFormulaire(); 
-
-// Au clic sur "commander"; il faut stocker les donnnées du formulaire dans le local storage"
-
-//---------------------- Event Listener sur le clic commander -------------------------
-
+let formulaire = document.getElementById("formulaire");
 let boutonCommander = document.getElementById("commander");
 
     boutonCommander.addEventListener("click", function(event) {
@@ -198,28 +150,40 @@ let boutonCommander = document.getElementById("commander");
         }
         console.log(contact)
 
-        //---------------------Stockage de contact dans le local storage --------------
-
-        // Pour stocker une valeur dans le local storage il faut utiliser la,methode stringify. 
-        localStorage.setItem("contact", JSON.stringify(contact));
-
+        let products = articlesAuPanier;
         //------------creation d'un objet pour stocker les informations à envoyer au serveur
-
-        let infoAEnvoyer = {
+        let order = {
             contact,
-            articlesAuPanier
+         products
         }
 
-        console.log("infoaenvoyer")
-        console.log(infoAEnvoyer);
+    console.log(order);
 
+        fetch("http://localhost:3000/api/cameras/order", {
+            method: "POST",
+             body: JSON.stringify(order)})
+         .then (function(response) {
+             console.log(response.json()) })
+         .then(function(order) {
+            
+         })
 
 // ------- fermeture de l'event listener sur le bouton commander -----
-    })
+    });
 
 
 
 
-    /*VALIDATION DES DONNES DU formulaire
+    /*VALIDATION DES DONNES DU formulaire // pas reussi 
     envoie des données au server
     recuperation d'un id de commande */
+
+   // -------------------- Envoyer les données au server --------------
+
+  
+   
+
+
+    //Retirer du local storage 
+
+      

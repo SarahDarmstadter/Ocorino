@@ -40,20 +40,20 @@
                         <label for="lastname"> Nom</label>
                             <input type="text" id="lastname" name="lastname" required="Veuillez remplir le champs">
                         <label for="firstname"> Prénom </label>
-                            <input type="text" id="firstname" name="firstname" required="Veuillez remplir le champs">
+                            <input type="text" id="firstname" name="firstname" required required="Veuillez remplir le champs">
                         <label for="email"> Adresse mail</label>
-                            <input type="email" id="email" class="email" required="Veuillez renseigner votre email">
+                            <input type="email" id="email" class="email" required required="Veuillez renseigner votre email">
                         <label for="telephone">Téléphone</label>
                             <input type="tel" id="telephone" class="telephone" required="Entrez un numéro de telephone">
                 
                 <fieldset>
                     <legend>Adresse de livraison</legend>
                         <label for="adress">Adresse de livraison</label>
-                            <input type="text" class="adress" id="adress" required="Veuillez remplir ce champs">
-                        <label for="city">Code postale</label>
-                            <input type="text" class="city" id="city" required="Veuillez remplir ce champs">
-                        <label for="pays">Pays</label>
-                            <input type="text" class="pays" id="pays" required="Veuillez remplir ce champs">
+                            <input type="text" class="adress" id="adress" required required="Veuillez remplir ce champs">
+                        <label for="city">Ville</label>
+                            <input type="text" class="city" id="city" required required="Veuillez remplir ce champs">
+                        <label for="pays">Code postal</label>
+                            <input type="number" class="CP" id="CP" required="Veuillez remplir ce champs" required>
                 </fieldset>
                 <fieldset>
                     <legend>Moyen de paiement</legend>
@@ -71,12 +71,14 @@
                         <label for="securite">Code sécurité</label>
                             <input id="securite" name="securite" type="number" required="Champs obligatoire">
                         <label for=name>Nom figurant sur la carte</label>
-                            <input id="nom-porteur" name=nom-porteur type="number" required="Champs obligatoire">      
+                            <input id="nom-porteur" name=nom-porteur type="text" required="Champs obligatoire">      
                       </fieldset>
 
                       <button type="submit" id="commander" class="commander">Commander</button>
-                </form>
+                </form> `
+            
 
+                      
         </section>
  
 
