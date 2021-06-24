@@ -24,7 +24,7 @@ function getDataStored (localStorage) {
     
     let imgProduit = document.createElement("img");
         imgProduit.classList.add("produit__img");
-        imgProduit.src = articlesAuPanier[i].imageProduit;
+        imgProduit.src = articlesAuPanier[i].imageUrl;
 
     let divArticle = document.createElement("div");
         divArticle.classList.add("div_produit");
@@ -38,17 +38,17 @@ function getDataStored (localStorage) {
 
     let articleNom = document.createElement("p");
         articleNom.classList.add("article_nom");
-        articleNom.textContent = articlesAuPanier[i].nomProduit;
+        articleNom.textContent = articlesAuPanier[i].name;
         divTexte.appendChild(articleNom);
 
     let articleDescription = document.createElement("p");
         articleDescription.classList.add("article_description");
-        articleDescription.textContent = articlesAuPanier[i].descriptionProduit;
+        articleDescription.textContent = articlesAuPanier[i].description;
         divTexte.appendChild(articleDescription);
 
     let articlePrice = document.createElement("p");
         articlePrice.classList.add("article_price");
-        articlePrice.textContent = articlesAuPanier[i].prixProduit / 100 + " euros";
+        articlePrice.textContent = articlesAuPanier[i].price / 100 + " euros";
         divTexte.appendChild(articlePrice);
         
     let retirerDuPanier = document.createElement("button");
@@ -58,6 +58,8 @@ function getDataStored (localStorage) {
         divTexte.appendChild(retirerDuPanier);
         
     supprimerArticle(i);
+    prixTotal();
+panierVide()
 //-------- fermeture boucle for ---------
 }
 //------- fermeture GetDataStored
@@ -75,7 +77,6 @@ function panierVide() {
             lePanierVide.style.display = "none";
         }   
     }
-panierVide()
 
 
 //------------creation d'une fonction pour retirer un article du panier -----------------------------------
@@ -89,23 +90,22 @@ function supprimerArticle(i){
 
     retirerDuPanier.addEventListener("click", function(event){
         event.preventDefault();
-        //console.log(i, articlesAuPanier[i]);
+        
         storage.splice(i, 1)
         console.log(storage)
         localStorage.setItem('achats', JSON.stringify(storage))
-       articleSupprimé.style.display = "none";
 
-        
+        articleSupprimé.style.display = "none";
+    
     // ----------- fermeture event listener --------------------------
     });
 };
 
-
-//----------------- fermeture de la fonction supprimer l'article
+getDataStored();
 
 // ------------------ Calcul du montant total à afficher --------------------
 
-function prixTotal(localStorage) {
+function prixTotal() {
     let x = [];
     for (let i = 0; i< articlesAuPanier.length; i++) { 
         let prixArticle = articlesAuPanier[i].prixProduit /100;
@@ -121,69 +121,56 @@ function prixTotal(localStorage) {
     listeArticles.appendChild(totalAffiché);
         console.log(totalAffiché);
 };
-
-//----- fin de la fonction Prix total
-
-getDataStored();
-prixTotal();
-
-
-
-
+//----- fin de la fonction Prix total ------------------
+// ----------------- Il faut que mon formulaire soit ok pour que je puisse l'envoyer----------
+    
 //---------------------- EVENT LISTENER ENVOIE DU FORMULAIRE  -------------------------
 
-let formulaire = document.getElementById("formulaire");
 let boutonCommander = document.getElementById("commander");
+let formulaire = document.getElementById("formulaire");
 
-    boutonCommander.addEventListener("click", function(event) {
-    event.preventDefault();
-//--------- récupérartion des valeurs des champs du formulaire ------------------
-        //------------- creation objet contact-----------------
-
-        let contact = {
-
-        firstname : document.getElementById("firstname").value,
-        lastname : document.getElementById("lastname").value,
+// --- evenement sur le formulaire ------ 
+ formulaire.addEventListener("submit", function(event){
+     event.preventDefault();
+     let contact = {
+        firstName : document.getElementById("firstname").value,
+        lastName : document.getElementById("lastname").value,
         email : document.getElementById("email").value,
-        adress : document.getElementById("adress").value,
+        address : document.getElementById("adress").value,
         city : document.getElementById("city").value,
         }
         console.log(contact)
 
         let products = articlesAuPanier;
-        //------------creation d'un objet pour stocker les informations à envoyer au serveur
+//------------creation d'un objet pour stocker les informations à envoyer au serveur
         let order = {
-            contact,
+         contact,
          products
         }
 
-    console.log(order);
-
         fetch("http://localhost:3000/api/cameras/order", {
-            method: "POST",
+             method: "POST",
+             headers : {
+                 Accept : "application/json", 
+                 "Content-type" : "application/json"
+             },
+             mode : "cors",
              body: JSON.stringify(order)})
          .then (function(response) {
              console.log(response.json()) })
-         .then(function(order) {
-            
-         })
 
 // ------- fermeture de l'event listener sur le bouton commander -----
     });
+ 
 
-
-
-
-    /*VALIDATION DES DONNES DU formulaire // pas reussi 
-    envoie des données au server
-    recuperation d'un id de commande */
-
-   // -------------------- Envoyer les données au server --------------
 
   
+
+        
+
+
+
+
    
-
-
-    //Retirer du local storage 
 
       

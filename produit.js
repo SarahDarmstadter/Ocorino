@@ -69,33 +69,33 @@ function fonction1(produit) {
 
     let select = document.getElementById("produit__personnalisation");
     let imageBox = document.getElementById("produit__image");
-    let imgProduit = document.createElement("img");
-        imgProduit.classList.add("produit__img");
-        imgProduit.src = produit.imageUrl;
-    imageBox.appendChild(imgProduit);
+    let imageUrl = document.createElement("img");
+        imageUrl.classList.add("produit__img");
+        imageUrl.src = produit.imageUrl;
+    imageBox.appendChild(imageUrl);
 
     let texteBox = document.getElementById("produit__texte");
-    let prixProduit = document.createElement("p");
-        prixProduit.classList.add("produit__prix");
+    let price = document.createElement("p");
+        price.classList.add("produit__prix");
     let prix = produit.price /100;
 
-        prixProduit.textContent = prix + " euros";
-    texteBox.appendChild(prixProduit);
+        price.textContent = prix + " euros";
+    texteBox.appendChild(price);
     
-    let descriptionProduit = document.createElement("p");
-        descriptionProduit.classList.add("produit__description");
-        descriptionProduit.textContent = produit.description;
-    texteBox.appendChild(descriptionProduit);
+    let description = document.createElement("p");
+        description.classList.add("produit__description");
+        description.textContent = produit.description;
+    texteBox.appendChild(description);
 
-    let idProduit = document.createElement("p");
-        idProduit.classList.add("produit__id");
-        idProduit.textContent = produit._id;
-    texteBox.appendChild(idProduit);
+    let id = document.createElement("p");
+        id.classList.add("produit__id");
+        id.textContent = produit._id;
+    texteBox.appendChild(id);
 
-    let nomProduit = document.createElement("p");
-        nomProduit.classList.add("produit__nom");
-        nomProduit.textContent = produit.name;
-    texteBox.appendChild(nomProduit);
+    let name = document.createElement("p");
+        name.classList.add("produit__nom");
+        name.textContent = produit.name;
+    texteBox.appendChild(name);
 
     let dropdownList = document.getElementById("produit__personnalisation");
     produit.lenses.forEach(function(lentille) {
@@ -113,11 +113,11 @@ function fonction1(produit) {
 // ------------------------------------Partie EVENT LISTENER -------------------------------------------------------------
     boutonPanier.addEventListener('click', function(event){
     let infoProduit = {
-        nomProduit : produit.name,
-        idProduit : produit._id,
-        prixProduit : produit.price,
-        imageProduit : produit.imageUrl,
-        descriptionProduit : produit.description
+        name : produit.name,
+        id : produit._id,
+        price : produit.price,
+        imageUrl : produit.imageUrl,
+        description : produit.description
     };
 
 // Déclaration d'une variable produitdDansLocalStorage dans laquelle on placera les clés et valeurs du local storage
@@ -143,6 +143,8 @@ function fonction1(produit) {
     // -------------------- fin event listener ----------------------------
  };  
 
+ getProductInfo();   
+ 
     let chiffrePanier = document.getElementById("panier__nombre-articles");
     let produitDansLocalStorage = JSON.parse(localStorage.getItem("achats"));
     chiffrePanier.textContent = produitDansLocalStorage.length;
@@ -150,4 +152,3 @@ function fonction1(produit) {
     
 
     
-getProductInfo();
