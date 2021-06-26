@@ -113,11 +113,13 @@ function fonction1(produit) {
 // ------------------------------------Partie EVENT LISTENER -------------------------------------------------------------
     boutonPanier.addEventListener('click', function(event){
     let infoProduit = {
-        name : produit.name,
+       
         id : produit._id,
+        name : produit.name,
         price : produit.price,
-        imageUrl : produit.imageUrl,
-        description : produit.description
+        description : produit.description?
+        imageUrl : produit.imageUrl
+        
     };
 
 // Déclaration d'une variable produitdDansLocalStorage dans laquelle on placera les clés et valeurs du local storage
