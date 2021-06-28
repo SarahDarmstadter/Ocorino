@@ -77,10 +77,12 @@ ul {
 
 .newCard {
   width: 65%;
+  height: 300px;
   border-radius: 34px;
   margin-bottom: 50px;
   display: flex;
   border: 10px #f3e9f1 solid;
+  justify-content: flex-end;
 }
 .newCard:hover {
   background-color: #f3e9f1;
@@ -98,6 +100,7 @@ ul {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+  justify-content: flex-end;
 }
 
 .name {
@@ -141,51 +144,6 @@ footer a {
   padding-left: 20px;
 }
 
-@media (min-width: 768px) {
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .newCard {
-    width: 90%;
-  }
-
-  .price {
-    align-self: flex-start;
-    margin-right: 10px;
-    bottom: 0px;
-  }
-}
-@media (max-width: 768px) {
-  .jumbotron {
-    text-align: center;
-  }
-
-  .newCard {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: 90%;
-    margin-bottom: 20px;
-  }
-
-  .img__produit {
-    height: 250px;
-    margin: 0;
-    border-radius: 34px 34px 0px 0px;
-  }
-
-  .price {
-    align-self: flex-start;
-    bottom: 0px;
-  }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-  }
-}
 @font-face {
   font-family: "Raleway-VariableFont_wghts";
   src: url("../public/police/Raleway-VariableFont_wght.ttf") format("truetype");
@@ -265,10 +223,12 @@ ul {
 
 .newCard {
   width: 65%;
+  height: 300px;
   border-radius: 34px;
   margin-bottom: 50px;
   display: flex;
   border: 10px #f3e9f1 solid;
+  justify-content: flex-end;
 }
 .newCard:hover {
   background-color: #f3e9f1;
@@ -286,6 +246,7 @@ ul {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+  justify-content: flex-end;
 }
 
 .name {
@@ -329,51 +290,6 @@ footer a {
   padding-left: 20px;
 }
 
-@media (min-width: 768px) {
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .newCard {
-    width: 90%;
-  }
-
-  .price {
-    align-self: flex-start;
-    margin-right: 10px;
-    bottom: 0px;
-  }
-}
-@media (max-width: 768px) {
-  .jumbotron {
-    text-align: center;
-  }
-
-  .newCard {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: 90%;
-    margin-bottom: 20px;
-  }
-
-  .img__produit {
-    height: 250px;
-    margin: 0;
-    border-radius: 34px 34px 0px 0px;
-  }
-
-  .price {
-    align-self: flex-start;
-    bottom: 0px;
-  }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-  }
-}
 .panier__nombre-articles {
   font-size: 1.5em;
   border-radius: 34px;
@@ -433,17 +349,6 @@ footer a {
   margin-right: 0px;
 }
 
-@media (min-width: 768px) {
-  section {
-    flex-direction: column;
-  }
-
-  .produit__image {
-    width: 100%;
-    border-radius: 0px;
-    border: none;
-  }
-}
 .panier__articles {
   padding-left: 3%;
   margin-top: 2%;

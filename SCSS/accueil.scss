@@ -100,10 +100,13 @@ ul
 .newCard
 {
     width: 65%;
+    height: 300px;
     border-radius: 34px;
     margin-bottom: 50px;
     display: flex;
     border: 10px $color-rose solid;
+    justify-content: flex-end;
+
     &:hover {
         background-color: $color-rose;
     }
@@ -123,6 +126,7 @@ ul
     display: flex;
     flex-direction: column;
     padding-left: 10px;
+    justify-content: flex-end;
 }
 
 .name
@@ -175,6 +179,5 @@ footer
     }
 }
 
-@import 'tablette.scss';
 
     
