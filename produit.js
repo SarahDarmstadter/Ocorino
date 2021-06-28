@@ -76,24 +76,24 @@ function fonction1(produit) {
 
     let texteBox = document.getElementById("produit__texte");
     let price = document.createElement("p");
-        price.classList.add("produit__prix");
+        price.classList.add("price");
     let prix = produit.price /100;
 
         price.textContent = prix + " euros";
     texteBox.appendChild(price);
     
     let description = document.createElement("p");
-        description.classList.add("produit__description");
+        description.classList.add("description");
         description.textContent = produit.description;
     texteBox.appendChild(description);
 
     let id = document.createElement("p");
-        id.classList.add("produit__id");
+        id.classList.add("id");
         id.textContent = produit._id;
     texteBox.appendChild(id);
 
     let name = document.createElement("p");
-        name.classList.add("produit__nom");
+        name.classList.add("name");
         name.textContent = produit.name;
     texteBox.appendChild(name);
 
@@ -117,7 +117,7 @@ function fonction1(produit) {
         id : produit._id,
         name : produit.name,
         price : produit.price,
-        description : produit.description?
+        description : produit.description,
         imageUrl : produit.imageUrl
         
     };

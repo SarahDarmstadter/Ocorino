@@ -36,20 +36,36 @@ ul {
 .nav-link {
   text-decoration: none;
   color: black;
-  font-size: 1.5em;
+  font-size: 1em;
   margin-right: 30px;
-  font-family: "Raleway-Thin";
+  font-weight: bold;
 }
 
 .nav-item {
   cursor: pointer;
   margin-right: 30%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.panier__nombre-articles {
+  padding-right: 10px;
+}
+
+.jumbotron {
+  display: flex;
+  font-weight: bold;
+  color: white;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(to left, #e38910, #8f5bfe 90%);
 }
 
 .cards_produit {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
+  align-items: center;
 }
 
 .lien {
@@ -60,43 +76,58 @@ ul {
 }
 
 .newCard {
-  font-size: 1em;
+  width: 65%;
+  border-radius: 34px;
+  margin-bottom: 50px;
   display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin-right: 0px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  line-height: 1em;
-  cursor: pointer;
-  box-shadow: 0px 0px 3px 2px #cfc7c7;
-  padding: 10px;
-  border-radius: 3px;
+  border: 10px #f3e9f1 solid;
+}
+.newCard:hover {
+  background-color: #f3e9f1;
 }
 
-.img_produit {
+.img__produit {
   width: 100%;
+  border-radius: 34px 0px 0px 34px;
+  margin: 10px;
+  background-size: 100%;
+  background-position: center;
+}
+
+.description__produit {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
 }
 
 .name {
   font-weight: bold;
-  font-size: 1.5em;
   margin: 0;
   padding: 15px 15px 15px 0px;
 }
 
 .description {
-  padding: 10px 10px 10px 0px;
+  padding: 10px 10px 0px 0px;
 }
 
 .price {
   align-self: flex-end;
+  margin-right: 10px;
+  position: relative;
+  bottom: 10px;
 }
 
-.card-body {
-  border: 5px solid #e38910;
-  height: 200Px;
-  margin-bottom: 30px;
+.produit__bouton {
+  align-self: flex-end;
+  margin: 0px 10px 10px 0px;
+  font-family: "Raleway-VariableFont_wghts";
+  font-weight: bold;
+  background: linear-gradient(to left, #e38910, #8f5bfe 90%);
+  color: white;
+  border-radius: 34px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 footer {
@@ -110,33 +141,51 @@ footer a {
   padding-left: 20px;
 }
 
-#produit {
-  display: flex;
-  box-shadow: 0px 0px 3px 2px #cfc7c7;
-  border-radius: 3px;
-  margin: 20px;
-  padding: 10px;
-}
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
 
-.produit__image {
-  width: 80%;
-}
+  .newCard {
+    width: 90%;
+  }
 
-.produit__img {
-  width: 100%;
+  .price {
+    align-self: flex-start;
+    margin-right: 10px;
+    bottom: 0px;
+  }
 }
+@media (max-width: 768px) {
+  .jumbotron {
+    text-align: center;
+  }
 
-.produit__texte {
-  padding: 20px;
-  display: flex;
-  flex-direction: column-reverse;
+  .newCard {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .img__produit {
+    height: 250px;
+    margin: 0;
+    border-radius: 34px 34px 0px 0px;
+  }
+
+  .price {
+    align-self: flex-start;
+    bottom: 0px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
 }
-
-.produit__option {
-  display: flex;
-  justify-content: space-between;
-}
-
 .panier__nombre-articles {
   font-size: 1.5em;
   border-radius: 34px;
@@ -152,6 +201,60 @@ footer a {
   display: flex;
   flex-direction: row-reverse;
   margin-right: 30px;
+}
+
+#produit {
+  display: flex;
+  border: solid 10px #e38910;
+  border-radius: 34px;
+  margin: 20px;
+}
+
+.produit__image {
+  width: 70%;
+}
+
+.produit__img {
+  width: 100%;
+  border-radius: 34px 0px 0px 34px;
+  margin: 10px;
+  border: 5px solid #8f5bfe;
+  border-right: none;
+}
+
+.produit__texte {
+  padding: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  border: 5px solid #8f5bfe;
+  border-left: none;
+  margin: 10px;
+  border-radius: 0px 34px 34px 0px;
+}
+
+.produit__option {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  align-self: flex-start;
+}
+
+.produit__bouton {
+  margin-right: 0px;
+}
+
+@media (min-width: 768px) {
+  section {
+    flex-direction: column;
+  }
+
+  .produit__image {
+    width: 100%;
+    border-radius: 0px;
+    border: none;
+  }
 }
 
 /*# sourceMappingURL=produit.css.map */

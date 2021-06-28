@@ -81,35 +81,53 @@ function createCard(data) {
         lien.classList.add("lien");
         lien.href = "produit.html?id=" + data._id;
     
-    let img = document.createElement("img");
-        img.classList.add("img_produit");
-        img.src = data.imageUrl ; 
+    let img = document.createElement("div");
+        img.classList.add("img__produit" + "--" + data._id);
+        img.classList.add("img__produit");
+        img.style.backgroundImage = "url(" + data.imageUrl + ")"; 
+        img.style.backgroundRepeat = "no-repeat";
+
+
         newCard[newCard.length - 1].appendChild(img)
+
+    let divTexte = document.createElement("div");
+        divTexte.classList.add("description__produit");
+        newCard[newCard.length - 1].appendChild(divTexte);
+
+    console.log(divTexte)
+
 
     let name = document.createElement("p");
         name.classList.add("name");
         name.textContent = data.name;
-        newCard[newCard.length - 1].appendChild(name);
+        divTexte.appendChild(name);
 
     let id = document.createElement("p");
         id.classList.add("id");
         id.textContent = data._id;
-        newCard[newCard.length - 1].appendChild(id);
+        divTexte.appendChild(id);
     
     let description = document.createElement("p");
         description.classList.add("description");
         description.textContent = data.description; 
-        newCard[newCard.length - 1].appendChild(description)
+        divTexte.appendChild(description)
     
     let price = document.createElement("p");
         price.classList.add("price");
     let prix = data.price /100;
     let prixEspace = prix.toString().replace(/(\d)(?=(\d{3})+\b)/g,'$1 ');
         price.textContent = prixEspace + " euros"; 
-        newCard[newCard.length - 1].appendChild(price)
+       divTexte.appendChild(price)
     
-    lien.appendChild(newCard[newCard.length - 1])
-    cardsProduit.appendChild(lien)
+
+    let enSavoirPlus = document.createElement("button");
+        enSavoirPlus.classList.add("produit__bouton");
+        enSavoirPlus.textContent = " En savoir plus";
+    enSavoirPlus.addEventListener("click", function(e){
+        e.preventDefault();
+        window.open("produit.html?id=" + data._id);
+    });
+        divTexte.appendChild(enSavoirPlus);
 }
 
 let chiffrePanier = document.getElementById("panier__nombre-articles");
