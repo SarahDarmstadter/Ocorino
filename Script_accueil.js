@@ -1,45 +1,4 @@
 
-/*Template encart produit */
-
-/* let cardsProduit = document.getElementsByClassName("cards_produit");
- 
-cardsProduit.appenChild(newCard);
-
-
-
-
-let newCard = document.createElement("div");
-    newCard.classList.add("cardJS");
-
-
-let title = document.createElement("h2");
-    title.classList.add("nom_produit");
-    title.innerHTML="Nom du Produit JS";
-newCard.appendChild(title);
-
-let description = document.createElement("p");
-    description.classList.add("prix");
-    description.innerHTML ="Prix";
-newCard.appendChild(description);
-
-let imgProduit = document.createElement("img");
-    imgProduit.classList.add("img_produit");
-    imgProduit.src = "file:///C:/Users/sarah/OneDrive/Desktop/Ocarino/logo_ocarino.PNG"
-newCard.appendChild(imgProduit);
-*/
-
-
-
-
-
-
-
-/*CREATION FONCTION MAIN POUR STOCKER LES ARTICLES???
-   async function articleEnVente () {
-        const data = await getData();
-        displayData(data);
-    }
-*/
 
 /*CREATION FONCTION POUR RECUPERER LES DONNEES*/
 

@@ -134,6 +134,7 @@ ul {
 }
 
 footer {
+  flex: 1;
   background-color: #f3e9f1;
   color: #261624;
   padding: 30px 0px 30px 30px;
@@ -142,6 +143,19 @@ footer a {
   color: #261624;
   text-decoration: none;
   padding-left: 20px;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px 20px 20px;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.confirmation {
+  margin-top: 50px;
+  margin-bottom: 600px;
 }
 
 .panier__nombre-articles {

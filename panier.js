@@ -152,8 +152,6 @@ let formulaire = document.getElementById("formulaire");
         address : document.getElementById("adress").value,
         city : document.getElementById("city").value,
         }
-        console.log(contact)
-
         let products = articlesAuPanier.map(elt => elt.id);
 
 //------------creation d'un objet pour stocker les informations à envoyer au serveur
@@ -170,9 +168,12 @@ let formulaire = document.getElementById("formulaire");
              },
              mode : "cors",
              body: JSON.stringify(order)})
-         .then (function(response) {
-             console.log(response.json()) })
-
+         .then ((response) => {
+            return response.json()})
+         .then((json) => {
+             window.open("confirmation.html?=" + json.orderId)
+            console.log(json.orderId)
+             })  
 // ------- fermeture de l'event listener sur le bouton commander -----
     });
  
