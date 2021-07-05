@@ -138,7 +138,7 @@ function prixTotal() {
 // ----------------- Il faut que mon formulaire soit ok pour que je puisse l'envoyer----------
     
 //---------------------- EVENT LISTENER ENVOIE DU FORMULAIRE  -------------------------
-
+function envoieFormulaire(){
 let boutonCommander = document.getElementById("commander");
 let formulaire = document.getElementById("formulaire");
 
@@ -176,12 +176,14 @@ let formulaire = document.getElementById("formulaire");
              })  
 // ------- fermeture de l'event listener sur le bouton commander -----
     });
+}
  
     getDataStored();
     prixTotal();
     panierVide();
     displayFormulaire();
     displayMontant();
+    envoieFormulaire();
 
 
 
