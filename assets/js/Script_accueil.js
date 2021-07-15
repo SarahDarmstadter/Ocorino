@@ -71,7 +71,7 @@ function createCard(data) {
         enSavoirPlus.textContent = " En savoir plus";
         enSavoirPlus.addEventListener("click", function(e){
         e.preventDefault();
-        window.open("produit.html?id=" + data._id);
+        window.open("assets/pages/produit.html?id=" + data._id);
         });
         divTexte.appendChild(enSavoirPlus);
 };
