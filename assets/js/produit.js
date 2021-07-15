@@ -82,6 +82,12 @@ function fonction1(produit) {
     dropdownList.appendChild(option);
     });
 
+/*
+ajouter la quantité au clic, utiliser map pour parcourir le tableau et voir si leproduit exite dans le ls, 
+et si oui incrementer la qua,tité sinon le pusher.*/
+
+
+
     let boutonPanier = document.getElementById("produit__panier");
     let quantitéProduit = 1;
     

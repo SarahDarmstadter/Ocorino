@@ -21,7 +21,7 @@
             <nav class="navigation">
                 <ul>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Accueil</a>
+                        <a class="nav-link" href="../../index.html">Accueil</a>
                     </li>
                 </ul>
             </nav>
@@ -41,16 +41,16 @@
                         <input type="text" id="firstname" name="firstname" pattern="[a-zA-Z]+" placeholder="Sarah" required>                        <label for="email"> Adresse mail</label>
                             <input type="email" id="email" class="email" required>
                         <label for="telephone">Téléphone</label>
-                            <input type="tel" id="telephone" class="telephone" required>
+                            <input type="tel" id="telephone" class="telephone" pattern="[0-9]{10}" required>
                 </fieldset>
                 <fieldset>
                     <legend>Adresse de livraison</legend>
                         <label for="adress">Adresse de livraison</label>
-                            <input type="text" class="adress" id="adress" pattern="[a-zA-Z]+" required>
+                            <input type="text" class="adress" id="adress" pattern="[0-9]{2,4}(\s{1}[a-zA-Z]+){2,}" required>
                         <label for="city">Ville</label>
                             <input type="text" class="city" id="city" pattern="[a-zA-Z]+" required>
                         <label for="CP">Code postal</label>
-                            <input type="number" class="CP" id="CP" required>
+                            <input type="text" class="CP" id="CP" pattern="[0-9]{5}" required>
                 </fieldset> 
                 
                     <!-- <legend>Moyen de paiement</legend>
@@ -81,6 +81,6 @@
             <a href="#">A propos d'Orinoco</a>
             <a href="#">Rejoignez-nous</a>
         </footer>
-        <script src="/assets/js/panier.js"></script>
+        <script src="../js/panier.js"></script>
     </body>
 </html>
