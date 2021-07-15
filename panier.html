@@ -31,29 +31,26 @@
             <div id="panier__articles" class="panier__articles">
                 <h1> Vos articles </h1>
             </div>
-
             <p class="panier-vide" id="panier-vide">Votre panier est vide</p>
-       
             <form method="POST" class="formulaire" id="formulaire">
                 <fieldset>
                     <legend>Contact</legend>
                         <label for="lastname"> Nom</label>
-                            <input type="text" id="lastname" name="lastname" required="Veuillez remplir le champs">
+                        <input type="text" id="lastname" name="lastname" pattern="[a-zA-Z]+" placeholder="Darmst" required>
                         <label for="firstname"> Prénom </label>
-                            <input type="text" id="firstname" name="firstname" required required="Veuillez remplir le champs">
-                        <label for="email"> Adresse mail</label>
-                            <input type="email" id="email" class="email" required required="Veuillez renseigner votre email">
+                        <input type="text" id="firstname" name="firstname" pattern="[a-zA-Z]+" placeholder="Sarah" required>                        <label for="email"> Adresse mail</label>
+                            <input type="email" id="email" class="email" required>
                         <label for="telephone">Téléphone</label>
-                            <input type="tel" id="telephone" class="telephone" required="Entrez un numéro de telephone">
-                
+                            <input type="tel" id="telephone" class="telephone" required>
+                </fieldset>
                 <fieldset>
                     <legend>Adresse de livraison</legend>
                         <label for="adress">Adresse de livraison</label>
-                            <input type="text" class="adress" id="adress" required required="Veuillez remplir ce champs">
+                            <input type="text" class="adress" id="adress" required>
                         <label for="city">Ville</label>
-                            <input type="text" class="city" id="city" required required="Veuillez remplir ce champs">
-                        <label for="pays">Code postal</label>
-                            <input type="number" class="CP" id="CP" required="Veuillez remplir ce champs" required>
+                            <input type="text" class="city" id="city" required>
+                        <label for="CP">Code postal</label>
+                            <input type="number" class="CP" id="CP" required>
                 </fieldset> 
                 
                     <!-- <legend>Moyen de paiement</legend>
@@ -77,19 +74,13 @@
                       </fieldset> -->
  
                       <button type="submit" id="commander" class="produit__bouton">Commander</button>
-                </form> `
-            
-
-                      
+                </form>      
         </section>
- 
-
-    <footer>
-        <a href="#">Condition générales</a>
-        <a href="#">A propos d'Orinoco</a>
-        <a href="#">Rejoignez-nous</a>
-    </footer>
-    <script src="panier.js"></script>
-
-</body>
+        <footer>
+            <a href="#">Condition générales</a>
+            <a href="#">A propos d'Orinoco</a>
+            <a href="#">Rejoignez-nous</a>
+        </footer>
+        <script src="panier.js"></script>
+    </body>
 </html>

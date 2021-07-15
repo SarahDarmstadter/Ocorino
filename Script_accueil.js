@@ -1,5 +1,3 @@
-
-
 /*CREATION FONCTION POUR RECUPERER LES DONNEES*/
 
 fetch('http://localhost:3000/api/cameras') 
@@ -8,7 +6,6 @@ fetch('http://localhost:3000/api/cameras')
     })
     .then(function(data) {
         data.forEach(function(produit){
-            console.log('produit', produit)
             createCard(produit)
         })
     })
@@ -16,12 +13,8 @@ fetch('http://localhost:3000/api/cameras')
         console.error(error);
     });
 
-
-    let cardsProduit = document.getElementById("cards_produit");
-    console.log(cardsProduit);
-
+let cardsProduit = document.getElementById("cards_produit");
 function createCard(data) {
-
 
 // card sert à créer la div. 
     let card = document.createElement("div");
@@ -31,7 +24,6 @@ function createCard(data) {
     let cardsProduit = document.getElementById("cards_produit");
 // On met la div dans le DOM. 
     cardsProduit.appendChild(card);
-
 
 // newCard sert à aller chercher LES div avec comme classe newCard vu que mnt elles sont dans le DOM.
     let newCard = document.getElementsByClassName("newCard");
@@ -46,15 +38,11 @@ function createCard(data) {
         img.style.backgroundImage = "url(" + data.imageUrl + ")"; 
         img.style.backgroundRepeat = "no-repeat";
 
-
         newCard[newCard.length - 1].appendChild(img)
 
     let divTexte = document.createElement("div");
         divTexte.classList.add("description__produit");
         newCard[newCard.length - 1].appendChild(divTexte);
-
-    console.log(divTexte)
-
 
     let name = document.createElement("p");
         name.classList.add("name");
@@ -78,29 +66,16 @@ function createCard(data) {
         price.textContent = prixEspace + " euros"; 
        divTexte.appendChild(price)
     
-
     let enSavoirPlus = document.createElement("button");
         enSavoirPlus.classList.add("produit__bouton");
         enSavoirPlus.textContent = " En savoir plus";
-    enSavoirPlus.addEventListener("click", function(e){
+        enSavoirPlus.addEventListener("click", function(e){
         e.preventDefault();
         window.open("produit.html?id=" + data._id);
-    });
+        });
         divTexte.appendChild(enSavoirPlus);
-}
+};
 
 let chiffrePanier = document.getElementById("panier__nombre-articles");
 let produitDansLocalStorage = JSON.parse(localStorage.getItem("achats"));
-
 chiffrePanier.textContent = produitDansLocalStorage.length;
-    
-
-
-
-   
-    
-
-    
-
-
-    

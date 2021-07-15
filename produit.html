@@ -2,39 +2,31 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel=stylesheet href="CSS/produit.css">
-<link rel=stylesheet href="CSS/responsive_produit.css">
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel=stylesheet href="CSS/produit.css">
+    <link rel=stylesheet href="CSS/responsive_produit.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title> Ocarino - Sarah Darmstadter</title>
 </head>
- <body>
-    <header>
+    <body>
         <header>
             <img class ="logo" src="logo_ocarino.PNG" alt="Logo d'Ocorino">
             <nav class="navigation">
                 <ul>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Accueil</a>
+                    <a class="nav-link" href="index.html">Accueil</a>
                     </li>
                     <li id= "nav-item" class="nav-item">
-                        <a class="nav-link" href="panier.html">Panier</a>
+                    <a class="nav-link" href="panier.html">Panier</a>
                         <p id="panier__nombre-articles" class ="panier__nombre-articles">0</p>
                     </li>
                 </ul>
             </nav>
         </header> 
-    </header> 
-    
-        <section id = "produit">
+        <div id = "produit">
             <div id="produit__image" class="produit__image"></div>
             <div id="produit__texte" class="produit__texte">
                 <div class= "produit__option">
@@ -43,17 +35,13 @@
                     </select>
                     <button type="button" class="produit__bouton" id="produit__panier">Ajouter au panier </button>
                 </div>
-
             </div>
-        </section>
+        </div>
         <footer>
             <a href="#">Condition générales</a>
             <a href="#">A propos d'Orinoco</a>
             <a href="#">Rejoignez-nous</a>
         </footer>
-
-
- </body>
- <script src="produit.js"></script>
-
+        <script src="produit.js"></script>
+    </body>
  </html>

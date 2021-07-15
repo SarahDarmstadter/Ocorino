@@ -2,14 +2,11 @@
 // passer l'id en parametre de fetch pour recup les infos de ce produit. 
 // display les infos sur la page. 
     
-
-
 // creer un bouton de personnalisation et stocker le choix du client. 
 // ajouter au panier : 
     // envoyer l'info au serveur POST 
     // quand on ajoute au panier ya un 1 qui apparait en haut de la navigation coté panier. 
     // permettre de choisir la quantité à mettre au panier 
-
 
 /*CREATION D'UNE FONCTION POUR LIRE L'URL et récupérer l'id */
 //le programme doit lire l'url 
@@ -36,12 +33,10 @@ function getProductInfo() {
         })
         .then(function(data) {
             fonction1(data);
-            console.log(data)
         })
         .catch(function(error) {
-            console.log(error);
         });      
-}
+};
 
 /* Créer DES fonctions qui afficheront les infos produit sur la page HTML 
 et accessoirement créer le HTML*/
@@ -58,12 +53,8 @@ et accessoirement créer le HTML*/
         // evenement onClick qui genere a chaque clic un tableau [ Nom du produit, prix, option, id ?];
             // stocker ce tableau dans local storage. 
 
-
-
-
 // Puisqu'on a appele fonction1 avec le parametre data, JS comprend que fonction1 a un parametre 
 // et ce peu importe son nom. Data ou produit. si c'est la meme fonction c'est le meme parametre        
-
 
 function fonction1(produit) {
 
@@ -105,21 +96,17 @@ function fonction1(produit) {
     dropdownList.appendChild(option);
     });
 
-
     let boutonPanier = document.getElementById("produit__panier");
     let quantitéProduit = 1;
-
     
 // ------------------------------------Partie EVENT LISTENER -------------------------------------------------------------
     boutonPanier.addEventListener('click', function(event){
     let infoProduit = {
-       
         id : produit._id,
         name : produit.name,
         price : produit.price,
         description : produit.description,
-        imageUrl : produit.imageUrl
-        
+        imageUrl : produit.imageUrl 
     };
 
 // Déclaration d'une variable produitdDansLocalStorage dans laquelle on placera les clés et valeurs du local storage
@@ -129,28 +116,20 @@ function fonction1(produit) {
     if (produitDansLocalStorage) {
         produitDansLocalStorage.push(infoProduit);
         localStorage.setItem("achats", JSON.stringify(produitDansLocalStorage));
-        console.log(produitDansLocalStorage);
-
     } else {
         produitDansLocalStorage = [];
         produitDansLocalStorage.push(infoProduit);
         localStorage.setItem("achats", JSON.stringify(produitDansLocalStorage))
-        console.log(produitDansLocalStorage);
     }
 
     let chiffrePanier = document.getElementById("panier__nombre-articles");
     chiffrePanier.textContent = produitDansLocalStorage.length;
-
-}); 
+    }); 
     // -------------------- fin event listener ----------------------------
- };  
+};  
 
  getProductInfo();   
  
     let chiffrePanier = document.getElementById("panier__nombre-articles");
     let produitDansLocalStorage = JSON.parse(localStorage.getItem("achats"));
     chiffrePanier.textContent = produitDansLocalStorage.length;
-  
-    
-
-    
