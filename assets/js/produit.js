@@ -38,20 +38,6 @@ function getProductInfo() {
         });      
 };
 
-/* Créer DES fonctions qui afficheront les infos produit sur la page HTML 
-et accessoirement créer le HTML*/
-//fonction 1 
-    //creation div image 
-    // creation info "texte"
-            //prix nom description 
-    // bouton de personnalisation 
-        // recuperer les infos du tableau lenses
-        // creer les options de la balise select et les afficher
-    // ajout au panier 
-        // créer le bouton en HTML 
-        // allez le chercher via son id 
-        // evenement onClick qui genere a chaque clic un tableau [ Nom du produit, prix, option, id ?];
-            // stocker ce tableau dans local storage. 
 
 // Puisqu'on a appele fonction1 avec le parametre data, JS comprend que fonction1 a un parametre 
 // et ce peu importe son nom. Data ou produit. si c'est la meme fonction c'est le meme parametre        

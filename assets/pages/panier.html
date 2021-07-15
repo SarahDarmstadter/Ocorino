@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel=stylesheet href="CSS/panier.css">
+<link rel=stylesheet href="../css/panier.css">
 
 
 
@@ -17,7 +17,7 @@
 </head>
  <body>
         <header>
-            <img class ="logo" src="logo_ocarino.PNG" alt="Logo d'Ocorino">
+            <img class ="logo" src="../img/logo_ocarino.PNG" alt="Logo d'Ocorino">
             <nav class="navigation">
                 <ul>
                     <li class="nav-item">
@@ -46,9 +46,9 @@
                 <fieldset>
                     <legend>Adresse de livraison</legend>
                         <label for="adress">Adresse de livraison</label>
-                            <input type="text" class="adress" id="adress" required>
+                            <input type="text" class="adress" id="adress" pattern="[a-zA-Z]+" required>
                         <label for="city">Ville</label>
-                            <input type="text" class="city" id="city" required>
+                            <input type="text" class="city" id="city" pattern="[a-zA-Z]+" required>
                         <label for="CP">Code postal</label>
                             <input type="number" class="CP" id="CP" required>
                 </fieldset> 
@@ -81,6 +81,6 @@
             <a href="#">A propos d'Orinoco</a>
             <a href="#">Rejoignez-nous</a>
         </footer>
-        <script src="panier.js"></script>
+        <script src="/assets/js/panier.js"></script>
     </body>
 </html>
